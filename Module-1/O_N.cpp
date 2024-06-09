@@ -7,14 +7,14 @@ int main()
     cin >> n;
 
     int a[n];
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) // O(N)
     {
         cin >> a[i];
     }
 
     int sum = 0;
 
-    for (int i = 0; i < n; i += 2)
+    for (int i = 0; i < n; i += 2) // O(N)
     {
         sum += a[i];
         // if (i % 2 > 0)
