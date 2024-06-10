@@ -13,14 +13,15 @@ int main()
     // type 3 : inisialise vector with size and value 
     // vector<int> v(5, 2);
 
-    // type 4 copy vector from another vector
+    // type 4 : copy vector from another vector
     // vector<int> v2(5,100);
     // vector<int> v(v2); // v copy all value from v2 
 
-    // type 5 copy vector from array 
+    // type 5 : copy vector from array 
     int ar[6] = {1,2,3,4,5,6};
-    
+
     vector <int> v(ar, ar+6); // v copy all value from ar array 
+
 
     for (int i = 0; i < v.size(); i++)
     {
