@@ -21,6 +21,7 @@ int main()
     // }
 
     // type two to take input  -- BEST way
+    
     int n;
     cin>>n;
     vector<int> v(n);
