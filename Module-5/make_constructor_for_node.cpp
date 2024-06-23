@@ -6,7 +6,6 @@ class Node
 public:
     int val;
     Node *next;
-    // create a constructor
     Node(int val)
     {
         this->val = val;
