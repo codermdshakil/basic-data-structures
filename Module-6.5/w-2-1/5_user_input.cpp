@@ -54,6 +54,28 @@ void insert_at_head(Node *&head, int val)
     return;
 }
 
+// insert at any position [without head]
+void insert_at_any_postion(Node *&head, int pos, int val)
+{
+    if (pos == 0)
+    {
+        insert_at_head(head, val);
+        return;
+    }
+    else
+    {
+        Node *newNode = new Node(val);
+        Node *temp = head;
+        for (int i = 1; i <= pos - 1; i++)
+        {
+            temp = temp->next;
+        }
+        newNode->next = temp->next;
+        temp->next = newNode;
+        return;
+    }
+}
+
 void print_linked_list(Node *head)
 {
     Node *temp = head;
@@ -78,12 +100,21 @@ int main()
         {
             break;
         }
-
-        // insert_at_tail(head, val);
-        insert_at_head(head, val);
+        insert_at_tail(head, val);
+        // insert_at_head(head, val);
     }
 
     print_linked_list(head);
+    cout << endl
+         << endl;
+
+    int pos, val;
+    cin >> pos >> val;
+
+    insert_at_any_postion(head, pos, val);
+    print_linked_list(head);
+    cout << endl
+         << endl;
 
     return 0;
 }
