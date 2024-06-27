@@ -101,6 +101,18 @@ void delete_at_specific_position(Node *&head, int pos)
          << endl;
 }
 
+// delete head
+void delete_head(Node *&head)
+{
+    Node *delete_node = head;
+    head = head->next;
+    delete delete_node;
+    cout << endl
+         << "Deleted head" << endl
+         << endl;
+    return;
+}
+
 // print linked list
 void print_linked_list(Node *head)
 {
@@ -130,8 +142,9 @@ int main()
         cout << "Option 2: Print linked list" << endl;
         cout << "Option 3: Insert at head" << endl;
         cout << "Option 4: Insert at specific postion" << endl;
-        cout << "Option 5: Delete at specific node" << endl;
-        cout << "Option 6: Terminate" << endl;
+        cout << "Option 5: Delete at specific Position" << endl;
+        cout << "Option 6: Delete head" << endl;
+        cout << "Option 7: Terminate" << endl;
         cin >> op;
         if (op == 1)
         {
@@ -172,6 +185,10 @@ int main()
             delete_at_specific_position(head, pos);
         }
         else if (op == 6)
+        {
+            delete_head(head);
+        }
+        else if (op == 7)
         {
             break;
         }
