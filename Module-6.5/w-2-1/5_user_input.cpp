@@ -37,6 +37,23 @@ void insert_at_tail(Node *&head, int val)
     return;
 }
 
+// Insert at head
+void insert_at_head(Node *&head, int val)
+{
+    // create a new node using new value
+    Node *newNode = new Node(val);
+
+    if (head == NULL)
+    {
+        head = newNode;
+        return;
+    }
+
+    newNode->next = head;
+    head = newNode;
+    return;
+}
+
 void print_linked_list(Node *head)
 {
     Node *temp = head;
@@ -62,7 +79,8 @@ int main()
             break;
         }
 
-        insert_at_tail(head, val);
+        // insert_at_tail(head, val);
+        insert_at_head(head, val);
     }
 
     print_linked_list(head);
