@@ -83,6 +83,24 @@ void insert_at_specific_position(Node *&head, int pos, int v)
     return;
 }
 
+// delete at specific position
+void delete_at_specific_position(Node *&head, int pos)
+{
+
+    Node *temp = head;
+    for (int i = 1; i <= pos - 1; i++)
+    {
+        temp = temp->next;
+    }
+
+    Node *delete_node = temp->next;
+    temp->next = temp->next->next;
+    delete delete_node;
+    cout << endl
+         << "Deleted position " << pos << endl
+         << endl;
+}
+
 // print linked list
 void print_linked_list(Node *head)
 {
@@ -112,7 +130,8 @@ int main()
         cout << "Option 2: Print linked list" << endl;
         cout << "Option 3: Insert at head" << endl;
         cout << "Option 4: Insert at specific postion" << endl;
-        cout << "Option 5: Terminate" << endl;
+        cout << "Option 5: Delete at specific node" << endl;
+        cout << "Option 6: Terminate" << endl;
         cin >> op;
         if (op == 1)
         {
@@ -145,6 +164,14 @@ int main()
             insert_at_specific_position(head, pos, val);
         }
         else if (op == 5)
+        {
+            int pos;
+            cout << endl
+                 << "Enter Position : ";
+            cin >> pos;
+            delete_at_specific_position(head, pos);
+        }
+        else if (op == 6)
         {
             break;
         }
