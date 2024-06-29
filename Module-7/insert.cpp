@@ -45,6 +45,21 @@ void insert_at_head(Node *&head, int val)
     head = newNode;
 }
 
+// insert at tail
+void insert_at_tail(Node *&head, Node *&tail, int val)
+{
+    // create a new node
+    Node *newNode = new Node(val);
+
+    if (head == NULL)
+    {
+        head = newNode;
+        tail = newNode;
+    }
+    tail->next = newNode;
+    tail = newNode;
+}
+
 // size of singly linked list
 int size(Node *head)
 {
@@ -78,6 +93,7 @@ int main()
     Node *b = new Node(30);
     Node *c = new Node(40);
     Node *d = new Node(50);
+    Node *tail = d;
 
     // linked list
     head->next = a;
@@ -86,6 +102,7 @@ int main()
     c->next = d;
 
     print_linked_list(head);
+    cout << "tail -> " << tail->val << endl;
 
     int pos, val;
     cout << "Enter position : ";
@@ -102,12 +119,17 @@ int main()
     {
         insert_at_head(head, val);
     }
+    else if (pos == size(head))
+    {
+        insert_at_tail(head, tail, val);
+    }
     else
     {
         insert(head, pos, val);
     }
 
     print_linked_list(head);
+    cout << "tail -> " << tail->val << endl;
 
     return 0;
 }
