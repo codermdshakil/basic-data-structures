@@ -37,6 +37,15 @@ void insert(Node *head, int pos, int val)
     return;
 }
 
+// insert at head function
+void insert_at_head(Node *&head, int val)
+{
+    Node *newNode = new Node(val);
+    newNode->next = head;
+    head = newNode;
+}
+
+// size of singly linked list
 int size(Node *head)
 {
 
@@ -79,18 +88,25 @@ int main()
     print_linked_list(head);
 
     int pos, val;
-    cin >> pos >> val;
+    cout << "Enter position : ";
+    cin >> pos;
+    cout << "Enter value : ";
+    cin >> val;
     if (pos > size(head))
     {
         cout << endl
              << "Invalid Index" << endl
              << endl;
     }
+    else if (pos == 0)
+    {
+        insert_at_head(head, val);
+    }
     else
     {
         insert(head, pos, val);
     }
-    
+
     print_linked_list(head);
 
     return 0;
