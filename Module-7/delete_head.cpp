@@ -30,6 +30,14 @@ void delete_at_pos(Node *head, int pos)
     return;
 }
 
+// delete head - O(1)
+void delete_head(Node *&head)
+{
+    Node * deleted_node = head;
+    head = head->next;
+    delete deleted_node;
+}
+
 // size of linked lista
 int linked_list_size(Node *head)
 {
@@ -78,8 +86,16 @@ int main()
     {
         cout << "Invalid Index" << endl;
     }
+    else if (pos == 0)
+    {
+        delete_head(head);
+    }
+    else
+    {
 
-    delete_at_pos(head, pos);
+        delete_at_pos(head, pos);
+    }
+
     print_linked_list(head);
     return 0;
 }
