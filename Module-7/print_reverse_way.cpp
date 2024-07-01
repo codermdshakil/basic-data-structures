@@ -13,7 +13,20 @@ public:
     }
 };
 
-// print reverse way  using recursive function
+// print recursive way  using assending order
+void print_recursive(Node *N)
+{
+
+    // base case
+    if (N == NULL)
+    {
+        return;
+    }
+    cout << N->val << " ";
+    print_recursive(N->next);
+}
+
+// print reverse way  using  dessending order
 void print_reverse(Node *N)
 {
 
@@ -40,8 +53,11 @@ int main()
     a->next = b;
     b->next = c;
     c->next = d;
-    
-    // called print reverse function 
+
+    // called print recursive and assending order
+    print_recursive(head);
+    cout << endl;
+    // called print reverse or dessending order
     print_reverse(head);
 
     return 0;
