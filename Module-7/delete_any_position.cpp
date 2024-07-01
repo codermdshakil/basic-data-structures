@@ -30,7 +30,7 @@ void delete_at_pos(Node *head, int pos)
     return;
 }
 
-// size of linked lista
+// size of linked list
 int linked_list_size(Node *head)
 {
     Node *tmp = head;

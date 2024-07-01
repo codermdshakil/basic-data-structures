@@ -12,6 +12,7 @@ public:
         this->next = NULL;
     }
 };
+
 // insert at head and tail  - complexity best - O(1)
 void insert_tail(Node * &head, Node * &tail, int val){
     Node * newNode = new Node(val);

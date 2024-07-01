@@ -38,7 +38,7 @@ void delete_head(Node *&head)
     delete deleted_node;
 }
 
-// size of linked lista
+// size of single linked list
 int linked_list_size(Node *head)
 {
     Node *tmp = head;
