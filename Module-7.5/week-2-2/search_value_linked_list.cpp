@@ -80,3 +80,5 @@ int main()
 
     return 0;
 }
+
+// Linear search - Complexity -> O(n)
