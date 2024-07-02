@@ -31,15 +31,21 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
 // print linked list
 void print_linked_list(Node *head)
 {
+    int evenCount = 0;
+    int oddCount = 0;
 
     Node *tmp = head;
     while (tmp != NULL)
     {
-
-        cout << tmp->val << " " ;
+        if(tmp->val%2 == 0){
+            evenCount++;
+        }
+        else{
+            oddCount++;
+        }
         tmp = tmp->next;
     }
-
+    cout << "Evens: " << evenCount << " " << " Odds: " << oddCount<< endl;
     return;
 }
 
