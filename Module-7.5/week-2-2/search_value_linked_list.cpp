@@ -81,4 +81,12 @@ int main()
     return 0;
 }
 
-// Linear search - Complexity -> O(n)
+// Linear search - O(N) 
+// sort          - O(NlongN)
+// binary search - O(long N)
+//-------------------------------
+//                 -> O(NlongN) + O(longN)
+
+// so best is -> O(N)
+// O(longN) > O(N) If linked list is sorted assending order then we can use Binary search
+ 
