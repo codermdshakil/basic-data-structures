@@ -34,7 +34,9 @@ void delete_specific_value(Node *&head, int x)
 
     // if head value equal to x value then change head to next
     if(head->val == x){
+        Node * deleteNode = head ;
         head = head->next;
+        delete deleteNode;
         return;
     }
 
