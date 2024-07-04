@@ -49,8 +49,8 @@ int size(Node *head)
     return cnt;
 }
 
-// insert at head in doubly linked list 
-void insert_at_head(Node *&head, int val)
+// insert at head in doubly linked list
+void insert_at_head(Node *&head, Node *&tail, int val)
 {
     // create new node
     Node *newNode = new Node(val);
@@ -59,6 +59,7 @@ void insert_at_head(Node *&head, int val)
     if (head == NULL)
     {
         head = newNode;
+        tail = newNode;
         return;
     }
     else
@@ -116,7 +117,7 @@ int main()
 
     if (pos == 0)
     {
-        insert_at_head(head, val);
+        insert_at_head(head, tail, val);
     }
     else if (pos >= size(head))
     {
