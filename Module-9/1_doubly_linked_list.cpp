@@ -28,6 +28,18 @@ void print_normal(Node *head)
     cout << endl;
 }
 
+// print reverse way using tail and prev
+void print_reverse(Node *tail)
+{
+    Node *tmp = tail;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp = tmp->prev;
+    }
+    cout << endl;
+}
+
 int main()
 {
 
@@ -44,6 +56,7 @@ int main()
     b->prev = a;
 
     print_normal(head);
+    print_reverse(tail);
 
     return 0;
 }
