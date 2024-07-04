@@ -32,8 +32,21 @@ void insert_any_position(Node *head, int pos, int val)
     newNode->next = tmp->next;
     tmp->next = newNode;
     newNode->next->prev = newNode;
-    newNode->prev = tmp; 
+    newNode->prev = tmp;
     return;
+}
+
+// doubly linked list size
+int size(Node *head)
+{
+    int cnt = 0;
+    Node *tmp = head;
+    while (tmp != NULL)
+    {
+        cnt++;
+        tmp = tmp->next;
+    }
+    return cnt;
 }
 
 // print normal
@@ -78,7 +91,16 @@ int main()
     b->next = c;
     c->prev = b;
 
-    insert_any_position(head, 2, 100);
+    int pos, val;
+    cin >> pos >> val;
+    if (pos >= size(head))
+    {
+        cout << "Invalid Index" << endl;
+    }
+    else
+    {
+        insert_any_position(head, pos, val);
+    }
 
     print_normal(head);
     print_reverse(tail);
