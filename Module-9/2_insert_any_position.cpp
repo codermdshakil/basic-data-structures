@@ -49,6 +49,26 @@ int size(Node *head)
     return cnt;
 }
 
+// insert at head in doubly linked list 
+void insert_at_head(Node *&head, int val)
+{
+    // create new node
+    Node *newNode = new Node(val);
+
+    // if head equal to NULL
+    if (head == NULL)
+    {
+        head = newNode;
+        return;
+    }
+    else
+    {
+        newNode->next = head;
+        head->prev = newNode;
+        head = newNode;
+    }
+}
+
 // print normal
 void print_normal(Node *head)
 {
@@ -93,7 +113,12 @@ int main()
 
     int pos, val;
     cin >> pos >> val;
-    if (pos >= size(head))
+
+    if (pos == 0)
+    {
+        insert_at_head(head, val);
+    }
+    else if (pos >= size(head))
     {
         cout << "Invalid Index" << endl;
     }
