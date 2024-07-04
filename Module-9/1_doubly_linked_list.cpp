@@ -19,5 +19,18 @@ public:
 
 int main(){
     
+    // create dynamic variable using Node
+    Node *head = new Node(10);
+    Node *a = new Node(20);
+    Node *b = new Node(30);
+    Node *tail = b;
+
+    // linked with variables
+    head->next = a;
+    a->prev = head;
+    a->next = b;
+    b->prev = a;
+
+    
     return 0;
 }
