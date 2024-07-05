@@ -44,6 +44,14 @@ void delete_at_tail(Node *&tail)
     tail->next = NULL;
 }
 
+// delete at head
+void delete_at_head(Node * & head){
+    Node * deleteNode = head;
+    head = head->next;
+    delete deleteNode;
+    head->prev = NULL;
+}
+
 // print normal way
 void print_normal(Node *head)
 {
@@ -84,7 +92,8 @@ int main()
     c->prev = b;
 
     // delete_at_position(head, 2);
-    delete_at_tail(tail);
+    // delete_at_tail(tail);
+    delete_at_head(head);
 
     print_normal(head);
     print_reverse(tail);
