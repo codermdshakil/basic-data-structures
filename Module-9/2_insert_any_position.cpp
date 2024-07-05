@@ -70,6 +70,22 @@ void insert_at_head(Node *&head, Node *&tail, int val)
     }
 }
 
+// insert at tail
+void insert_at_tail(Node *&head, Node *&tail, int val)
+{
+    // create new node
+    Node *newNode = new Node(val);
+    if (tail == NULL)
+    {
+        head = newNode;
+        tail = newNode;
+        return;
+    }
+    tail->next = newNode;
+    newNode->prev = tail;
+    tail = tail->next;
+}
+
 // print normal
 void print_normal(Node *head)
 {
@@ -118,6 +134,10 @@ int main()
     if (pos == 0)
     {
         insert_at_head(head, tail, val);
+    }
+    else if (pos == size(head))
+    {
+        insert_at_tail(head, tail, val);
     }
     else if (pos >= size(head))
     {
