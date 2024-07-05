@@ -35,6 +35,15 @@ void delete_at_position(Node *head, int pos)
     return;
 }
 
+// delete at tail
+void delete_at_tail(Node *&tail)
+{
+    Node *deleteNode = tail;
+    tail = tail->prev;
+    delete deleteNode;
+    tail->next = NULL;
+}
+
 // print normal way
 void print_normal(Node *head)
 {
@@ -60,24 +69,22 @@ void print_reverse(Node *tail)
 
 int main()
 {
-    // Node *head = new Node(10);
-    // Node *a = new Node(20);
-    // Node *b = new Node(30);
-    // Node *c = new Node(40);
-    // Node *tail = c;
+    Node *head = new Node(10);
+    Node *a = new Node(20);
+    Node *b = new Node(30);
+    Node *c = new Node(40);
+    Node *tail = c;
 
-    Node *head = NULL;
-    Node *tail = NULL;
+    // // linked each others
+    head->next = a;
+    a->prev = head;
+    a->next = b;
+    b->prev = a;
+    b->next = c;
+    c->prev = b;
 
-    // linked each others
-    // head->next = a;
-    // a->prev = head;
-    // a->next = b;
-    // b->prev = a;
-    // b->next = c;
-    // c->prev = b;
-
-    delete_at_position(head, 2);
+    // delete_at_position(head, 2);
+    delete_at_tail(tail);
 
     print_normal(head);
     print_reverse(tail);
