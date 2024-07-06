@@ -4,8 +4,8 @@ using namespace std;
 int main()
 {
 
-    list<int> myList = {10, 20, 30, 40, 50};
-    // list<int> newList;
+    list<int> myList = {10, 20, 30, 40, 50, 60, 70 , 80};
+    // list<int> newList = {600, 700, 800};
 
     // 1. shortcut way to assign
     //  newList = myList;
@@ -26,11 +26,19 @@ int main()
 
     // insert any position
     //-------------------
-    //  myList.insert(next(myList.begin(), 2), 200);
+    // myList.insert(next(myList.begin(), 2), 200);
+
+    // insert multiple value using insert function
+    // myList.insert(next(myList.begin(), 2), {100,200,300});
+
+    // insert a list in a myList
+    // myList.insert(next(myList.begin(), 3), newList.begin(), newList.end());
 
     // delete any position
     //---------------------
-    myList.erase(next(myList.begin(), 2));
+    // myList.erase(next(myList.begin(), 2));
+    // delete multiple value
+    // myList.erase(next(myList.begin(), 2), next(myList.begin(), 5)); // it delete pos - 2-4
 
     for (int val : myList)
     {
