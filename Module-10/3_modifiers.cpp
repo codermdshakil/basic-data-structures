@@ -13,7 +13,7 @@ int main()
     // 2. longcut way to assign
     // newList.assign(myList.begin(), myList.end());
 
-    // insert head, tail 
+    // insert head, tail
     //--------------------
     // myList.push_front(300); // insert at head
     // myList.push_back(100); // insert at tail
@@ -23,9 +23,14 @@ int main()
     //--------------------
     // myList.pop_front(); // delete from head
     // myList.pop_back();  // delete from tail
-    
-    //insert any position
-    myList.insert(next(myList.begin(), 2), 200);
+
+    // insert any position
+    //-------------------
+    //  myList.insert(next(myList.begin(), 2), 200);
+
+    // delete any position
+    //---------------------
+    myList.erase(next(myList.begin(), 2));
 
     for (int val : myList)
     {
