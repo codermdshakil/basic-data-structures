@@ -29,10 +29,13 @@ int main()
     // }
 
     // print reverse way myList 
-    for (auto it = myList.rbegin(); it != myList.rend(); it++)
-    {
-        cout << *it << " ";
-    }
+    // for (auto it = myList.rbegin(); it != myList.rend(); it++)
+    // {
+    //     cout << *it << " ";
+    // }
+
+    
+
 
     return 0;
 }
