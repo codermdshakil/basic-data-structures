@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
 
-    list<int> myList = {10, 20, 30, 40, 50, 60, 70 , 80};
+    list<int> myList = {10, 20, 30, 40, 30, 50, 60, 30, 70, 80};
     // list<int> newList = {600, 700, 800};
 
     // 1. shortcut way to assign
@@ -39,6 +39,10 @@ int main()
     // myList.erase(next(myList.begin(), 2));
     // delete multiple value
     // myList.erase(next(myList.begin(), 2), next(myList.begin(), 5)); // it delete pos - 2-4
+
+    // replace
+    //--------
+    replace(myList.begin(), myList.end(), 30, 100);
 
     for (int val : myList)
     {
