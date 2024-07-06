@@ -8,7 +8,7 @@ int main()
     // myList.clear(); // clear all elements
     // cout << myList.size() << endl; // length
 
-    myList.resize(2); // it will contain just 2 elements on listN
+    // myList.resize(2); // it will contain just 2 elements on listN
     // myList.resize(5, 100); after two size 3,4,5 size value is 100
 
     // check if myList is empty or not
@@ -23,9 +23,15 @@ int main()
     //     cout << "NO" << endl;
     // }
 
-    for (int val : myList)
+    // for (int val : myList)
+    // {
+    //     cout << val << " ";
+    // }
+
+    // print reverse way myList 
+    for (auto it = myList.rbegin(); it != myList.rend(); it++)
     {
-        cout << val << " ";
+        cout << *it << " ";
     }
 
     return 0;
@@ -38,4 +44,4 @@ int main()
  * max_size
  * clear
  * empty
-*/
+ */
