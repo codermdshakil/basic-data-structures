@@ -23,6 +23,9 @@ int main()
     //--------------------
     // myList.pop_front(); // delete from head
     // myList.pop_back();  // delete from tail
+    
+    //insert any position
+    myList.insert(next(myList.begin(), 2), 200);
 
     for (int val : myList)
     {
