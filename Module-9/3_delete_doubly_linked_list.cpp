@@ -24,7 +24,6 @@ void delete_at_position(Node *head, int pos)
     Node *tmp = head;
     for (int i = 1; i <= pos - 1; i++)
     {
-
         tmp = tmp->next;
     }
 
@@ -45,11 +44,25 @@ void delete_at_tail(Node *&tail)
 }
 
 // delete at head
-void delete_at_head(Node * & head){
-    Node * deleteNode = head;
+void delete_at_head(Node *&head)
+{
+    Node *deleteNode = head;
     head = head->next;
     delete deleteNode;
     head->prev = NULL;
+}
+
+// size of doubly linked list
+int size(Node *head)
+{
+    int cnt = 0;
+    Node *tmp = head;
+    while (tmp != NULL)
+    {
+        cnt++;
+        tmp = tmp->next;
+    }
+    return cnt;
 }
 
 // print normal way
@@ -91,9 +104,30 @@ int main()
     b->next = c;
     c->prev = b;
 
-    // delete_at_position(head, 2);
-    // delete_at_tail(tail);
-    delete_at_head(head);
+    int pos;
+    cin >> pos;
+
+    // Error handle
+    if (pos >= size(head))
+    {
+        cout << "Invalid Index" << endl;
+    }
+    else if (pos < 0)
+    {
+        cout << "Invalid Index" << endl;
+    }
+    else if (pos == 0)
+    {
+        delete_at_head(head);
+    }
+    else if (pos == size(head) - 1)
+    {
+        delete_at_tail(tail);
+    }
+    else
+    {
+        delete_at_position(head, pos);
+    }
 
     print_normal(head);
     print_reverse(tail);

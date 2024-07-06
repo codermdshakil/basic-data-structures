@@ -20,15 +20,12 @@ void insert_any_position(Node *head, int pos, int val)
 {
     // create a new node
     Node *newNode = new Node(val);
-
     Node *tmp = head;
-
     // go before position
     for (int i = 1; i <= pos - 1; i++)
     {
         tmp = tmp->next;
     }
-
     newNode->next = tmp->next;
     tmp->next = newNode;
     newNode->next->prev = newNode;
@@ -81,9 +78,12 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
         tail = newNode;
         return;
     }
-    tail->next = newNode;
-    newNode->prev = tail;
-    tail = tail->next;
+    else
+    {
+        tail->next = newNode;
+        newNode->prev = tail;
+        tail = tail->next;
+    }
 }
 
 // print normal
