@@ -42,12 +42,26 @@ int main()
 
     // replace
     //--------
-    replace(myList.begin(), myList.end(), 30, 100);
+    // replace(myList.begin(), myList.end(), 30, 100);
 
-    for (int val : myList)
+    // find
+    //------
+    auto it = find(myList.begin(), myList.end(), 50);
+
+    if (it == myList.end())
     {
-        cout << val << " ";
+        cout << "Not found" << endl;
     }
+    else
+    {
+
+        cout << "found" << endl;
+    }
+
+    // for (int val : myList)
+    // {
+    //     cout << val << " ";
+    // }
 
     return 0;
 }
