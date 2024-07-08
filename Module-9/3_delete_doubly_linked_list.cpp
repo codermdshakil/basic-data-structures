@@ -17,6 +17,20 @@ public:
     }
 };
 
+// delete at head
+void delete_at_head(Node *&head, Node *&tail)
+{
+    Node *deleteNode = head;
+    head = head->next;
+    delete deleteNode;
+    if (head == NULL) // if head->next is NULL  [error handle]
+    {
+        tail = NULL;
+        return;
+    }
+    head->prev = NULL;
+}
+
 // delete any position [without head, tail]
 void delete_at_position(Node *head, int pos)
 {
@@ -35,21 +49,17 @@ void delete_at_position(Node *head, int pos)
 }
 
 // delete at tail
-void delete_at_tail(Node *&tail)
+void delete_at_tail(Node *&head, Node *&tail)
 {
     Node *deleteNode = tail;
     tail = tail->prev;
     delete deleteNode;
+    if (tail == NULL) // if tail->next is NULL  [error handle]
+    {
+        head = NULL;
+        return;
+    }
     tail->next = NULL;
-}
-
-// delete at head
-void delete_at_head(Node *&head)
-{
-    Node *deleteNode = head;
-    head = head->next;
-    delete deleteNode;
-    head->prev = NULL;
 }
 
 // size of doubly linked list
@@ -96,7 +106,7 @@ int main()
     Node *c = new Node(40);
     Node *tail = c;
 
-    // // linked each others
+    // linked each others
     head->next = a;
     a->prev = head;
     a->next = b;
@@ -118,11 +128,11 @@ int main()
     }
     else if (pos == 0)
     {
-        delete_at_head(head);
+        delete_at_head(head, tail);
     }
     else if (pos == size(head) - 1)
     {
-        delete_at_tail(tail);
+        delete_at_tail(head, tail);
     }
     else
     {
