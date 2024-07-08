@@ -16,9 +16,10 @@ public:
     }
 };
 
-void insert_tail(Node *&head, Node *&tail, int v)
+// insert at tail
+void insert_tail(Node *&head, Node *&tail, int val)
 {
-    Node *newNode = new Node(v);
+    Node *newNode = new Node(val);
     if (head == NULL)
     {
         head = newNode;
@@ -33,43 +34,42 @@ void insert_tail(Node *&head, Node *&tail, int v)
     }
 }
 
-void print(Node *head, Node *tail)
+void print_normal(Node *head)
 {
-    Node *i = head;
-    Node *j = tail;
-    bool flag = true;
-
-    while (i != NULL && j != NULL && i != j && i->prev != j)
+    Node *tmp = head;
+    int mn = INT_MIN;
+    while (tmp != NULL)
     {
-        if (i->val != j->val)
+        if (tmp->val > mn)
         {
-            flag = false;
-            break;
+            mn = tmp->val;
         }
-        else
-        {
-            flag = true;
-        }
-        i = i->next;
-        j = j->prev;
+
+        tmp = tmp->next;
+    }
+    cout << mn << endl;
+    cout << endl;
+}
+
+void print_reverse(Node *tail)
+{
+
+    Node *tmp = tail;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp = tmp->prev;
     }
 
-    if (flag == true)
-    {
-        cout << "YES" << endl;
-    }
-    else
-    {
-        cout << "NO" << endl;
-    }
+    cout << endl;
 }
 
 int main()
 {
-
-    Node *head = NULL;
-    Node *tail = NULL;
     int val;
+
+    list<int> myList;
+
     while (true)
     {
         cin >> val;
@@ -79,11 +79,16 @@ int main()
         }
         else
         {
-            insert_tail(head, tail, val);
+            myList.push_back(val);
         }
     }
+    // sort assending order 
+    myList.sort();
 
-    print(head, tail);
+    for (int val : myList)
+    {
+        cout << val << " ";
+    }
 
     return 0;
 }

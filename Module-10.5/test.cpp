@@ -16,9 +16,10 @@ public:
     }
 };
 
-void insert_tail(Node *&head, Node *&tail, int v)
+// insert at tail
+void insert_tail(Node *&head, Node *&tail, int val)
 {
-    Node *newNode = new Node(v);
+    Node *newNode = new Node(val);
     if (head == NULL)
     {
         head = newNode;
@@ -33,43 +34,35 @@ void insert_tail(Node *&head, Node *&tail, int v)
     }
 }
 
-void print(Node *head, Node *tail)
+void print_normal(Node *head)
 {
-    Node *i = head;
-    Node *j = tail;
-    bool flag = true;
+    Node *tmp = head;
+    while (tmp != NULL)
+    {
+        cout << tmp->val << " ";
+        tmp = tmp->next;
+    }
+    cout << endl;
+}
 
-    while (i != NULL && j != NULL && i != j && i->prev != j)
+void print_reverse(Node *tail)
+{
+    Node *tmp = tail;
+    while (tmp != NULL)
     {
-        if (i->val != j->val)
-        {
-            flag = false;
-            break;
-        }
-        else
-        {
-            flag = true;
-        }
-        i = i->next;
-        j = j->prev;
+        cout << tmp->val << " ";
+        tmp = tmp->prev;
     }
 
-    if (flag == true)
-    {
-        cout << "YES" << endl;
-    }
-    else
-    {
-        cout << "NO" << endl;
-    }
+    cout << endl;
 }
 
 int main()
 {
-
     Node *head = NULL;
     Node *tail = NULL;
     int val;
+
     while (true)
     {
         cin >> val;
@@ -83,7 +76,8 @@ int main()
         }
     }
 
-    print(head, tail);
+    print_normal(head);
+    print_reverse(tail);
 
     return 0;
 }
