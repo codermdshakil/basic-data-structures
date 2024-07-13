@@ -32,30 +32,12 @@ void insert_tail(Node *&head, Node *&tail, int val)
     }
 }
 
-void delete_any_pos(Node *head1, Node *head2, int a, int b)
+void swapPairs(Node *head)
 {
-    Node *tmp1 = head1;
-    for (int i = 1; i < a; i++)
+    for (Node *tmp = head; tmp  != NULL; tmp = tmp->next->next)
     {
-        tmp1 = tmp1->next;
+        swap(tmp->val, tmp->next->val);
     }
-
-    Node *tmp2 = tmp1->next;
-    for (int i = a; i <= b; i++)
-    {
-        tmp2 = tmp2->next;
-    }
-    // tmp one next connect to the list 2
-    tmp1->next = head2;
-    
-    Node *tmp3 = head2;
-
-    while (tmp3 != NULL)
-    {
-        tmp3 = tmp3->next;
-    }
-
-    tmp3->next = tmp2;
 }
 
 void print_normal(Node *head)
@@ -71,10 +53,8 @@ void print_normal(Node *head)
 
 int main()
 {
-    Node *head1 = NULL;
-    Node *tail1 = NULL;
-    Node *head2 = NULL;
-    Node *tail2 = NULL;
+    Node *head = NULL;
+    Node *tail = NULL;
 
     int val;
 
@@ -87,28 +67,13 @@ int main()
         }
         else
         {
-            insert_tail(head1, tail1, val);
+            insert_tail(head, tail, val);
         }
     }
 
-    while (true)
-    {
-        cin >> val;
-        if (val == -1)
-        {
-            break;
-        }
-        else
-        {
-            insert_tail(head2, tail2, val);
-        }
-    }
+    swapPairs(head);
 
-    int a, b;
-    cin >> a >> b;
-
-    delete_any_pos(head1, head2, a, b);
-    print_normal(head1);
+    print_normal(head);
 
     return 0;
 }
