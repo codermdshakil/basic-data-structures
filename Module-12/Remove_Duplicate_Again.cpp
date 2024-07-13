@@ -5,13 +5,11 @@ class Node
 {
 public:
     int val;
-    Node *prev;
     Node *next;
 
     Node(int val)
     {
         this->val = val;
-        this->prev = NULL;
         this->next = NULL;
     }
 };
@@ -29,11 +27,9 @@ void insert_tail(Node *&head, Node *&tail, int val)
     else
     {
         tail->next = newNode;
-        newNode->prev = tail;
         tail = tail->next;
     }
 }
-
 
 void print_normal(Node *head)
 {
@@ -43,18 +39,6 @@ void print_normal(Node *head)
         cout << tmp->val << " ";
         tmp = tmp->next;
     }
-    cout << endl;
-}
-
-void print_reverse(Node *tail)
-{
-    Node *tmp = tail;
-    while (tmp != NULL)
-    {
-        cout << tmp->val << " ";
-        tmp = tmp->prev;
-    }
-
     cout << endl;
 }
 
@@ -78,10 +62,24 @@ int main()
         }
     }
 
+    list<int> myList;
 
+    // copy value to myList
+    while (head != NULL)
+    {
+        myList.push_back(head->val);
+        head = head->next;
+    }
+    // sort myList
+    myList.sort();
+    // detele duplicate
+    myList.unique();
 
-    print_normal(head);
-    print_reverse(tail);
+    // print list to assending order
+    for (auto it = myList.begin(); it != myList.end(); it++)
+    {
+        cout << *it << " ";
+    }
 
     return 0;
 }
