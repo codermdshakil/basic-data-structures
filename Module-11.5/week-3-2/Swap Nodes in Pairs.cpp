@@ -14,9 +14,11 @@ public:
         if(head == NULL || head->next == NULL){
             return head;
         }
+        
         for (ListNode* tmp = head; tmp != NULL; tmp = tmp->next->next) {
             swap(tmp->val, tmp->next->val);
         }
+
         return head;
     }
 };
