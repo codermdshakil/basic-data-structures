@@ -17,7 +17,7 @@ public:
 };
 
 // insert at tail
-void insert_tail(Node *&head, Node *&tail, int val)
+void insert_at_tail(Node *&head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
     if (head == NULL)
@@ -34,80 +34,62 @@ void insert_tail(Node *&head, Node *&tail, int val)
     }
 }
 
-void print_normal(Node *head)
+void print_normal(list<int> &myList)
 {
-    Node *tmp = head;
-    while (tmp != NULL)
+    cout << "L -> ";
+    for (auto it = myList.begin(); it != myList.end(); it++)
     {
-        cout << tmp->val << " ";
-        tmp = tmp->next;
+        cout << *it << " ";
     }
     cout << endl;
 }
 
-void print_reverse(Node *tail)
+void print_reverse(list<int> &myList)
 {
-    Node *tmp = tail;
-    while (tmp != NULL)
+    cout << "R -> ";
+    for (auto it = myList.rbegin(); it != myList.rend(); it++)
     {
-        cout << tmp->val << " ";
-        tmp = tmp->prev;
+        cout << *it << " ";
     }
-
     cout << endl;
 }
 
 int main()
 {
-    // Node *head = NULL;
-    // Node *tail = NULL;
-    Node * head = new Node(10);
-    Node * a = new Node(20);
-    Node * b = new Node(30);
-    Node * c = new Node(40);
-    Node * d = new Node(50);
-    Node * tail = d;
+    Node *head = NULL;
+    Node *tail = NULL;
 
+    int t;
+    cin >> t;
 
+    list<int> myList;
     int x, v;
-    cin>>x>>v;
 
-    cout << "x -> " << x << " y -> " << v<< endl;
+    while (t--)
+    {
+        cin >> x >> v;
+        if (x == 0)
+        {
+            myList.push_front(v);
+        }
+        else if (x == 1)
+        {
+            myList.push_back(v);
+        }
+        else if (x == 2)
+        {
+            if (v >= 0 && v < myList.size())
+            {
 
-    // // linked 
-    head->next = a;
-    a->prev = head;
+                auto it = myList.begin();
+                advance(it, v);
+                myList.erase(it);
+            }
+        }
 
-    a->next = b;
-    b->prev = a;
-
-    b->next = c;
-    c->prev = b;
-
-    c->next = d;
-    d->prev = c;
-
-    // while (true)
-    // {
-    //     cin >> val;
-    //     if (val == -1)
-    //     {
-    //         break;
-    //     }
-    //     else
-    //     {
-    //         insert_tail(head, tail, val);
-    //     }
-    // }
-
-    if(x == 0){
-        
+        print_normal(myList);
+        print_reverse(myList);
     }
-
-
-
-    print_normal(head);
-    print_reverse(tail);
 
     return 0;
 }
