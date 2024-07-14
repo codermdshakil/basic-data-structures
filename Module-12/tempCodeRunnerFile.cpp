@@ -1,9 +1,12 @@
- if (flag == true)
-    {
-        cout << "YES" << endl;
-    }
-    else
-    {
 
-        cout << "NO" << endl;
-    }
+    // head->next = a;
+    // a->prev = head;
+
+    // a->next = b;
+    // b->prev = a;
+
+    // b->next = c;
+    // c->prev = b;
+
+    // c->next = d;
+    // c->prev = c;
