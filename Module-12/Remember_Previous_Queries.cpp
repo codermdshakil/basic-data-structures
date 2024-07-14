@@ -1,39 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Node
-{
-public:
-    int val;
-    Node *prev;
-    Node *next;
-
-    Node(int val)
-    {
-        this->val = val;
-        this->prev = NULL;
-        this->next = NULL;
-    }
-};
-
-// insert at tail
-void insert_at_tail(Node *&head, Node *&tail, int val)
-{
-    Node *newNode = new Node(val);
-    if (head == NULL)
-    {
-        head = newNode;
-        tail = newNode;
-        return;
-    }
-    else
-    {
-        tail->next = newNode;
-        newNode->prev = tail;
-        tail = tail->next;
-    }
-}
-
 void print_normal(list<int> &myList)
 {
     cout << "L -> ";
@@ -56,9 +23,6 @@ void print_reverse(list<int> &myList)
 
 int main()
 {
-    Node *head = NULL;
-    Node *tail = NULL;
-
     int t;
     cin >> t;
 
