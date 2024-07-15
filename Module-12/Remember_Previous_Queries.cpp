@@ -21,6 +21,19 @@ void print_reverse(list<int> &myList)
     cout << endl;
 }
 
+int find_index(list<int> &lst, int value)
+{
+    auto it = find(lst.begin(), lst.end(), value);
+    if (it != lst.end())
+    {
+        return distance(lst.begin(), it);
+    }
+    else
+    {
+        return -1; // Value not found
+    }
+}
+
 int main()
 {
     int t;
@@ -44,13 +57,11 @@ int main()
         {
             if (v >= 0 && v < myList.size())
             {
-
-                auto it = myList.begin();
-                advance(it, v);
-                myList.erase(it);
+                 auto it = myList.begin();
+                 advance(it, v);  
+                 myList.erase(it); 
             }
         }
-
         print_normal(myList);
         print_reverse(myList);
     }
