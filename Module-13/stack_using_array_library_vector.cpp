@@ -50,20 +50,21 @@ int main()
     // declare stack from main
     myStack st;
 
-    // push value to top
-    st.push(10);
-    st.push(20);
-    // access top
-    // cout << st.top() << endl; // 20
+    int n;
+    cin >> n;
+    // take input of stack
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        st.push(x);
+    }
 
-    // remove top
-    st.pop();
-    // cout << st.top() << endl; // 10
-
-    // Error handle
-    if (st.empty() == false)
-    { // that means you have value now we can call [top, pop]
-    
+    // print stack value
+    while (st.empty() != true)
+    {
+        cout << st.top() << endl;
+        st.pop(); // basecase to stop loop
     }
 
     return 0;
