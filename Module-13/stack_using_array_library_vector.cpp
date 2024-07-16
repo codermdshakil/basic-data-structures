@@ -31,23 +31,40 @@ public:
         return v.size();
     }
 
-    // stack in empty or not 
-    bool empty(){
-        if(v.size() == 0){
+    // stack in empty or not
+    bool empty()
+    {
+        if (v.size() == 0)
+        {
             return true;
         }
-        else{
+        else
+        {
             return false;
         }
     }
-
-
 };
 
 int main()
 {
     // declare stack from main
     myStack st;
+
+    // push value to top
+    st.push(10);
+    st.push(20);
+    // access top
+    // cout << st.top() << endl; // 20
+
+    // remove top
+    st.pop();
+    // cout << st.top() << endl; // 10
+
+    // Error handle
+    if (st.empty() == false)
+    { // that means you have value now we can call [top, pop]
+    
+    }
 
     return 0;
 }
