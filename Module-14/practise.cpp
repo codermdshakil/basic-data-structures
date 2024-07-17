@@ -48,14 +48,21 @@ int main()
 
     myQueue q;
 
-    q.push(10);
-    q.push(20);
-    q.push(30);
-    q.push(40);
+    int n;
+    cin >> n;
 
-    cout << q.top() << endl;
-    q.pop();
-    cout << q.top() << endl;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        q.push(x);
+    }
+
+    while (q.empty() != true)
+    {
+        cout << q.top() << endl; // print fast
+        q.pop();                 // remove fast
+    }
 
     return 0;
 }
