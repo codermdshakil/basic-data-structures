@@ -18,7 +18,7 @@ public:
     }
 
     // return top
-    int top()
+    int front()
     {
         return v.front();
     }
@@ -60,7 +60,7 @@ int main()
 
     while (q.empty() != true)
     {
-        cout << q.top() << endl; // print fast
+        cout << q.front() << endl; // print fast
         q.pop();                 // remove fast
     }
 
