@@ -66,5 +66,12 @@ int main()
         q.pop();                   // remove fast
     }
 
+    // if you want to access pop and front then you can you like below
+    if (q.empty() != true)
+    {
+        q.pop();
+        q.front();
+    }
+
     return 0;
 }
