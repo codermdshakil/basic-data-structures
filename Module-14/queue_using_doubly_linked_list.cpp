@@ -49,7 +49,9 @@ public:
         if (head == NULL)
         {
             tail = NULL;
+            return;
         }
+        head->prev = NULL;
     }
 
     // return front
