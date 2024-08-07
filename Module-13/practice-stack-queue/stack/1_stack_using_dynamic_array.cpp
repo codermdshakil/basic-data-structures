@@ -7,30 +7,30 @@ public:
     vector<int> v;
 
     // push value in vector top
-    void push(int val)
+    void push(int val) // O(1)
     {
         v.push_back(val);
     }
 
     // pop value from top
-    void pop()
+    void pop() // O(1)
     {
         v.pop_back();
     }
 
     // access top
-    int top()
+    int top() // O(1)
     {
         return v.back();
     }
 
     // size
-    int size()
+    int size() // O(1)
     {
         v.size();
     }
     // Check true or false
-    bool empty()
+    bool empty() // O(1)
     {
         if (v.size() == 0)
         {
@@ -45,7 +45,7 @@ public:
 
 int main()
 {
-   
+    myStack st;
 
     return 0;
 }
