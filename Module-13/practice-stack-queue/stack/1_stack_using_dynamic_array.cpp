@@ -19,15 +19,33 @@ public:
     }
 
     // access top
-    int top(){
+    int top()
+    {
         return v.back();
     }
 
-
+    // size
+    int size()
+    {
+        v.size();
+    }
+    // Check true or false
+    bool empty()
+    {
+        if (v.size() == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 };
 
 int main()
 {
+   
 
     return 0;
 }
