@@ -61,15 +61,24 @@ int main()
         st.push(x);
     }
 
-    // print stack elements [stack elements print in reverse way]
-    for (int i = 0; i < n; i++)
+    // Best way
+    while (st.empty() != true)
     {
-        if (st.empty() != true)
-        {
-            cout << st.top() << endl;
-            st.pop();
-        }
+        cout << st.top() << endl;
+        st.pop();
     }
+    
+
+    // Not best way
+    // print stack elements [stack elements print in reverse way]
+    // for (int i = 0; i < n; i++)
+    // {
+    //     if (st.empty() != true)
+    //     {
+    //         cout << st.top() << endl;
+    //         st.pop();
+    //     }
+    // }
 
     return 0;
 }
