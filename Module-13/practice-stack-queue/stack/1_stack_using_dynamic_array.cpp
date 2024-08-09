@@ -6,31 +6,32 @@ class myStack
 public:
     vector<int> v;
 
-    // push value in vector top
-    void push(int val) // O(1)
+    // push method
+    void push(int val)
     {
         v.push_back(val);
     }
 
-    // pop value from top
-    void pop() // O(1)
+    // pop method
+    void pop()
     {
         v.pop_back();
     }
 
-    // access top
-    int top() // O(1)
+    // top
+    int top()
     {
         return v.back();
     }
 
     // size
-    int size() // O(1)
+    int size()
     {
-        v.size();
+        return v.size();
     }
-    // Check true or false
-    bool empty() // O(1)
+
+    // empty
+    bool empty()
     {
         if (v.size() == 0)
         {
@@ -45,13 +46,14 @@ public:
 
 int main()
 {
+
     myStack st;
 
-    // size of stack
+    // take stack size input
     int n;
     cin >> n;
 
-    // take input of stack elements
+    // take stack elements inputs
     for (int i = 0; i < n; i++)
     {
         int x;
@@ -59,7 +61,7 @@ int main()
         st.push(x);
     }
 
-    // prints stack elements 
+    // print stack elements [stack elements print in reverse way]
     for (int i = 0; i < n; i++)
     {
         if (st.empty() != true)
@@ -68,7 +70,6 @@ int main()
             st.pop();
         }
     }
-    // stack elements print in reverse way
 
     return 0;
 }
