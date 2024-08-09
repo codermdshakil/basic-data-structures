@@ -52,8 +52,16 @@ int main()
 
     cout << st.top() << endl;
     st.pop();
-    
     cout << st.top() << endl;
+    st.pop();
+    cout << st.top() << endl;
+    st.pop();
+
+    // If stack is not empty
+    if (st.empty() != true)
+    {
+        cout << st.top() << endl;
+    }
 
     return 0;
 }
