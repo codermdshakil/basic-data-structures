@@ -46,22 +46,29 @@ public:
 int main()
 {
     myStack st;
-    st.push(10);
-    st.push(20);
-    st.push(30);
 
-    cout << st.top() << endl;
-    st.pop();
-    cout << st.top() << endl;
-    st.pop();
-    cout << st.top() << endl;
-    st.pop();
+    // size of stack
+    int n;
+    cin >> n;
 
-    // If stack is not empty
-    if (st.empty() != true)
+    // take input of stack elements
+    for (int i = 0; i < n; i++)
     {
-        cout << st.top() << endl;
+        int x;
+        cin >> x;
+        st.push(x);
     }
+
+    // prints stack elements 
+    for (int i = 0; i < n; i++)
+    {
+        if (st.empty() != true)
+        {
+            cout << st.top() << endl;
+            st.pop();
+        }
+    }
+    // stack elements print in reverse way
 
     return 0;
 }
