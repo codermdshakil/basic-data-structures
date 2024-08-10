@@ -20,12 +20,22 @@ public:
 class myStack
 {
 public:
-    list<int> l;
+    Node * head = NULL;
+    Node * tail = NULL;
 
-    // push method
+    // push method - push value to tail
     void push(int val)
     {
-        l.push_back(val);
+        // Create new node 
+        Node * newNode =  new Node(val);
+        if(head == NULL){
+            head = newNode;
+            tail = newNode;
+            return;
+        }
+        tail->next = newNode;
+        newNode->prev = tail;
+        tail = tail->next;
     }
 
     // pop method
@@ -62,25 +72,7 @@ public:
 
 int main()
 {
-    myStack st;
-    int n;
-    cin >> n;
-
-    for (int i = 0; i < n; i++)
-    {
-        int x;
-        cin >> x;
-        st.push(x);
-    }
-
-    for (int i = 0; i < n; i++)
-    {
-        if (st.empty() != true)
-        {
-            cout << st.top() << endl;
-            st.pop();
-        }
-    }
+     
 
     return 0;
 }
