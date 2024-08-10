@@ -20,15 +20,19 @@ public:
 class myStack
 {
 public:
-    Node * head = NULL;
-    Node * tail = NULL;
+    Node *head = NULL;
+    Node *tail = NULL;
+    int sz = 0;
 
-    // push method - push value to tail
+    // push method - push value to tail 
+    // time complexity - O(1)
     void push(int val)
     {
-        // Create new node 
-        Node * newNode =  new Node(val);
-        if(head == NULL){
+        sz++;
+        // Create new node
+        Node *newNode = new Node(val);
+        if (head == NULL)
+        {
             head = newNode;
             tail = newNode;
             return;
@@ -38,28 +42,37 @@ public:
         tail = tail->next;
     }
 
-    // pop method
+    // pop method - delete tail
+    // time complexity - O(1)
     void pop()
     {
-        l.pop_back();
+        sz--;
+        Node *deleteNode = tail;
+        tail = tail->prev;
+        if (tail == NULL)
+        {
+            head = NULL;
+        }
+        delete deleteNode;
     }
 
-    // top
+    // top method - access tail value
     int top()
     {
-        return l.back();
+        return tail->val;
     }
 
     // size
+    // time complexity - O(1)
     int size()
     {
-        return l.size();
+        return sz;
     }
 
     // empty
     bool empty()
     {
-        if (l.size() == 0)
+        if (sz == 0)
         {
             return true;
         }
@@ -72,7 +85,28 @@ public:
 
 int main()
 {
-     
+
+     myStack st;
+    
+    // stack size
+    int n;
+    cin>>n;
+
+    // stack elements input
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin>>x;
+        st.push(x);
+    }
+
+    // print stack elements
+    while (!st.empty())
+    {
+        cout << st.top() << endl;
+        st.pop();
+    }
+    
 
     return 0;
 }
