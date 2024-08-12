@@ -52,15 +52,28 @@ public:
         }
     }
     // front
-    int front(){
+    int front()
+    {
         return head->val;
     }
 
     // size
-    int size(){
+    int size()
+    {
         return sz;
     }
-
+    // empty
+    bool emtpy()
+    {
+        if (sz == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 };
 
 int main()
@@ -69,7 +82,6 @@ int main()
     my_queue q;
     q.push(10);
     q.pop();
-
 
     return 0;
 }
