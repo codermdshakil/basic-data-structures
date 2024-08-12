@@ -51,7 +51,11 @@ public:
             tail = NULL;
         }
     }
-   
+    // front
+    int front(){
+        return head->val;
+    }
+
 
 };
 
