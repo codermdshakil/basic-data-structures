@@ -20,10 +20,12 @@ class my_queue
 public:
     Node *head = NULL;
     Node *tail = NULL;
+    int sz = 0;
 
     // push
     void push(int val)
     {
+        sz++;
         // create new Node
         Node *newNode = new Node(val);
         if (head == NULL)
@@ -37,16 +39,29 @@ public:
     }
 
     // pop
-    void pop(){
-        Node * deleteNode = head;
+    void pop()
+    {
+        sz--;
+        Node *deleteNode = head;
         head = head->next;
         delete deleteNode;
+
+        if (head == NULL)
+        {
+            tail = NULL;
+        }
     }
-    
+   
+
 };
 
 int main()
 {
+
+    my_queue q;
+    q.push(10);
+    q.pop();
+
 
     return 0;
 }
