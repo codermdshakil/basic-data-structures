@@ -56,6 +56,10 @@ public:
         return head->val;
     }
 
+    // size
+    int size(){
+        return sz;
+    }
 
 };
 
