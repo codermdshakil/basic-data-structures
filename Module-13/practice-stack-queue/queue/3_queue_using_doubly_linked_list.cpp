@@ -47,12 +47,14 @@ public:
         sz--;
         Node *deleteNode = head;
         head = head->next;
-        delete deleteNode;
-
         if (head == NULL)
         {
             tail = NULL;
+            delete deleteNode;
+            return;
         }
+        head->prev = NULL;
+        delete deleteNode;
     }
     // front
     int front()
@@ -85,11 +87,11 @@ int main()
     my_queue q;
 
     int n;
-    cin>>n;
+    cin >> n;
     for (int i = 0; i < n; i++)
     {
         int x;
-        cin>>x;
+        cin >> x;
         q.push(x);
     }
 
@@ -97,7 +99,6 @@ int main()
     {
         cout << q.front() << endl;
         q.pop();
-
     }
 
     return 0;
