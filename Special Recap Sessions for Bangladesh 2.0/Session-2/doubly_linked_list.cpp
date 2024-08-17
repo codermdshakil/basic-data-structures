@@ -16,9 +16,48 @@ public:
     }
 };
 
+// insert at head
+void insertHead(Node *&head, Node *&tail, int val)
+{
+    // create new node using new value
+    Node *newNode = new Node(val);
+    if (head == NULL)
+    {
+        head = newNode;
+        tail = newNode;
+        return;
+    }
+    tail->next = newNode;
+    newNode->prev = tail;
+    tail = tail->next;
+}
 
+// print linked list
+void printList(Node *head)
+{
+    while (head != NULL)
+    {
+        cout << head->val << endl;
+        head = head->next;
+    }
+}
 int main()
 {
+    Node *head = NULL;
+    Node *tail = NULL;
+
+    int val;
+    while (true)
+    {
+        cin >> val;
+        if (val == -1)
+        {
+            break;
+        }
+        insertHead(head, tail, val);
+    }
+
+    printList(head);
 
     return 0;
 }
