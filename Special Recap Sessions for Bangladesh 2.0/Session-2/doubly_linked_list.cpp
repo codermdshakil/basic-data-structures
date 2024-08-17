@@ -48,16 +48,25 @@ void insertTail(Node *&head, Node *&tail, int val)
 }
 
 // print linked list
-void printList(Node *head)
+void print_normal(Node *head)
 {
     while (head != NULL)
     {
-        cout << head->val << endl;
+        cout << head->val << " ";
         head = head->next;
     }
     cout << endl;
 }
 
+void print_reverse(Node *tail)
+{
+    while (tail != NULL)
+    {
+        cout << tail->val << " ";
+        tail = tail->prev;
+    }
+    cout << endl;
+}
 
 int main()
 {
@@ -75,7 +84,8 @@ int main()
         insertTail(head, tail, val);
     }
 
-    printList(head);
+    print_normal(head);
+    print_reverse(tail);
 
     return 0;
 }
