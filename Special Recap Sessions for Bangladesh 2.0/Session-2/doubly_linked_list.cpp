@@ -32,6 +32,21 @@ void insertHead(Node *&head, Node *&tail, int val)
     tail = tail->next;
 }
 
+// insert at tail
+void insertTail(Node *&head, Node *&tail, int val)
+{
+    Node *newNode = new Node(val);
+    if (tail == NULL)
+    {
+        insertHead(head, tail, val);
+        return;
+    }
+
+    tail->next = newNode;
+    newNode->prev = tail;
+    tail = tail->next;
+}
+
 // print linked list
 void printList(Node *head)
 {
@@ -54,7 +69,7 @@ int main()
         {
             break;
         }
-        insertHead(head, tail, val);
+        insertTail(head, tail, val);
     }
 
     printList(head);
