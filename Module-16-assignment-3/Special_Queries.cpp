@@ -11,18 +11,21 @@ void getName(queue<string> &myQueue)
 {
     if (!myQueue.empty())
     {
-        cout << myQueue.front() << endl;
+        cout << myQueue.front() << "\n";
         myQueue.pop();
         return;
     }
     else
     {
-        cout << "Invalid" << endl;
+        cout << "Invalid" << "\n";
     }
 }
 
 int main()
 {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
     queue<string> myQueue;
     int test;
     cin >> test;
