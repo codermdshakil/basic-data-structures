@@ -55,7 +55,10 @@ void printList(Node *head)
         cout << head->val << endl;
         head = head->next;
     }
+    cout << endl;
 }
+
+
 int main()
 {
     Node *head = NULL;
