@@ -47,6 +47,23 @@ void insertTail(Node *&head, Node *&tail, int val)
     tail = tail->next;
 }
 
+// insert at any position
+void insertAtAny(Node *&head,int pos, int val)
+{
+    Node *newNode = new Node(val);
+    Node *tmp = head;
+
+    for (int i = 1; i <= pos - 1; i++)
+    {
+        tmp = tmp->next;
+    }
+
+    newNode->next = tmp->next;
+    tmp->next = newNode;
+    newNode->next->prev = newNode;
+    newNode->prev = tmp;
+}
+
 // print linked list
 void print_normal(Node *head)
 {
@@ -72,7 +89,6 @@ int main()
 {
     Node *head = NULL;
     Node *tail = NULL;
-
     int val;
     while (true)
     {
@@ -84,6 +100,8 @@ int main()
         insertTail(head, tail, val);
     }
 
+    // insertHead(head, tail, 100);
+    insertAtAny(head, 2 , 500);
     print_normal(head);
     print_reverse(tail);
 
