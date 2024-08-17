@@ -48,7 +48,7 @@ void insertTail(Node *&head, Node *&tail, int val)
 }
 
 // insert at any position
-void insertAtAny(Node *&head,int pos, int val)
+void insertAtAny(Node *&head, int pos, int val)
 {
     Node *newNode = new Node(val);
     Node *tmp = head;
@@ -62,6 +62,19 @@ void insertAtAny(Node *&head,int pos, int val)
     tmp->next = newNode;
     newNode->next->prev = newNode;
     newNode->prev = tmp;
+}
+
+// delete Head
+void deleteHead(Node *&head, Node *& tail)
+{
+    Node *deleteNode = head;
+    head = head->next;
+    delete deleteNode;
+    if(head == NULL){
+        tail = NULL;
+        return;
+    }
+    head->prev = NULL;
 }
 
 // print linked list
@@ -101,7 +114,8 @@ int main()
     }
 
     // insertHead(head, tail, 100);
-    insertAtAny(head, 2 , 500);
+    // insertAtAny(head, 2, 500);
+    deleteHead(head, tail);
     print_normal(head);
     print_reverse(tail);
 
