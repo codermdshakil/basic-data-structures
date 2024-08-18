@@ -23,8 +23,8 @@ void inOrder(Node *root)
         return;
     }
     inOrder(root->left);
-    inOrder(root->right);
     cout << root->val << " ";
+    inOrder(root->right);
 }
 
 int main()
@@ -51,7 +51,7 @@ int main()
     d->left = f;
     d->right = g;
 
-    //called pre order function
+    // called  in order function
     inOrder(root);
 
     return 0;
