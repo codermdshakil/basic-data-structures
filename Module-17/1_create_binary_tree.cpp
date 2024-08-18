@@ -31,8 +31,23 @@ int main()
     Node *h = new Node(90);
     Node *i = new Node(100);
 
-  
+    // connection
 
+    // level 0
+    root->left = a;
+    root->right = b;
+
+    // level 1
+    a->left = c;
+    a->right = h;
+    b->left = d;
+
+    // Level 2
+    c->right = e;
+    h->left = i;
+    d->left = f;
+    d->right = g;
+    
 
     return 0;
 }
