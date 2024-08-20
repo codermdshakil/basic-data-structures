@@ -80,14 +80,26 @@ Node *input_binary_tree()
     return root;
 }
 
+// count nodes
+int count(Node *root)
+{
+    // basecase
+    if (root == NULL)
+    {
+        return 0;
+    }
 
+    int l = count(root->left);
+    int r = count(root->right);
+    return l + r + 1;
+}
 
 
 int main()
 {
 
     Node *root = input_binary_tree();
-    
+    cout << "Nodes : " <<count(root) << endl;
 
     return 0;
 }
