@@ -18,7 +18,7 @@ public:
 };
 
 // preOrder 
-void preOrder(Node *root)
+void preOrder(Node *root) // root -> left -> right
 {
     // base case
     if(root == NULL){
@@ -28,6 +28,19 @@ void preOrder(Node *root)
     cout << root->val << " ";
     preOrder(root->left);
     preOrder(root->right);
+}
+
+// postOrder 
+void postOrder(Node *root) // left -> right-> root  
+{
+    // base case
+    if(root == NULL){
+        return;
+    }
+
+    postOrder(root->left);
+    postOrder(root->right);
+    cout << root->val << " ";
 }
 
 int main()
@@ -45,7 +58,11 @@ int main()
     b->left = d;
 
     // preOrder function called 
-    preOrder(root);
+    // preOrder(root);
+    // postOrder function called
+    postOrder(root);
+
+
 
 
     return 0;
