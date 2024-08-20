@@ -59,6 +59,31 @@ void inOrder(Node *root) // left-> root -> right
     inOrder(root->right);
 }
 
+// level order
+void levelOrder(Node *root)
+{
+    queue<Node *> q;
+    q.push(root);
+
+    while (!q.empty())
+    {
+        // 1. ber kore ana
+        Node *f = q.front();
+        q.pop();
+
+        // 2. joto kaj ase kora
+        cout << f->val << " ";
+
+        // 3. f children gola push kora
+        if(f->left != NULL){
+            q.push(f->left);
+        }
+        if(f->right != NULL){
+            q.push(f->right);
+        }
+    }
+}
+
 int main()
 {
     Node *root = new Node(10);
@@ -81,6 +106,10 @@ int main()
 
     // in Order function called
     // inOrder(root);
+
+    // level order function called
+    levelOrder(root);
+
 
     return 0;
 }
