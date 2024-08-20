@@ -110,6 +110,5 @@ int main()
     // level order function called
     levelOrder(root);
 
-
     return 0;
 }
