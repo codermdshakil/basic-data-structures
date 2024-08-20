@@ -17,11 +17,12 @@ public:
     }
 };
 
-// preOrder 
+// preOrder
 void preOrder(Node *root) // root -> left -> right
 {
     // base case
-    if(root == NULL){
+    if (root == NULL)
+    {
         return;
     }
 
@@ -30,17 +31,32 @@ void preOrder(Node *root) // root -> left -> right
     preOrder(root->right);
 }
 
-// postOrder 
-void postOrder(Node *root) // left -> right-> root  
+// postOrder
+void postOrder(Node *root) // left -> right-> root
 {
     // base case
-    if(root == NULL){
+    if (root == NULL)
+    {
         return;
     }
 
     postOrder(root->left);
     postOrder(root->right);
     cout << root->val << " ";
+}
+
+// postOrder
+void inOrder(Node *root) // left-> root -> right
+{
+    // base case
+    if (root == NULL)
+    {
+        return;
+    }
+
+    inOrder(root->left);
+    cout << root->val << " ";
+    inOrder(root->right);
 }
 
 int main()
@@ -57,13 +73,14 @@ int main()
     a->right = c;
     b->left = d;
 
-    // preOrder function called 
+    // preOrder function called
     // preOrder(root);
+
     // postOrder function called
-    postOrder(root);
+    // postOrder(root);
 
-
-
+    // in Order function called
+    // inOrder(root);
 
     return 0;
 }
