@@ -122,6 +122,7 @@ int main()
 {
     // called input binary tree and get root
     Node *root = input_binary_tree();
+    // check using level order
     level_order(root);
 
     return 0;
