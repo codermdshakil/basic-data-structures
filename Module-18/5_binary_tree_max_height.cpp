@@ -84,47 +84,26 @@ Node *input_binary_tree()
     return root;
 }
 
-// nodes count
-int count_nodes(Node *root)
+// max height of binary tree
+int maxHeight(Node *root)
 {
-    // base case
+    // Basecase
     if (root == NULL)
     {
         return 0;
     }
 
-    int l = count_nodes(root->left);
-    int r = count_nodes(root->right);
-    return l + r + 1;
+    int l = maxHeight(root->left);
+    int r = maxHeight(root->right);
+
+    // check which one if big then big + 1
+    return max(l, r) + 1;
 }
-// leaf node count
-int count_leaf(Node *root)
-{
-    // base case
-    if (root == NULL)
-    {
-        return 0;
-    }
-
-    if (root->left == NULL & root->right == NULL)
-    {
-        return 1;
-    }
-    else
-    {
-        int l = count_leaf(root->left);
-        int r = count_leaf(root->right);
-        return l + r;
-    }
-}
-
-
 
 int main()
 {
     Node *root = input_binary_tree();
-    cout << "Node : " << count_nodes(root) << endl;
-    cout << "Leaf Nodes : " << count_leaf(root) << endl;
+    cout << maxHeight(root) << endl;
 
     return 0;
 }
