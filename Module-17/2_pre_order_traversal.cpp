@@ -2,7 +2,6 @@
 using namespace std;
 
 // create binary tree node
-
 class Node
 {
 public:

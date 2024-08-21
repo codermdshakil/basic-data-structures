@@ -15,15 +15,16 @@ public:
     }
 };
 
-void inOrder(Node *root)
+// post order traversal
+void postOrder(Node *root)
 {
     // base case
     if (root == NULL)
     {
         return;
     }
-    inOrder(root->left);
-    inOrder(root->right);
+    postOrder(root->left);
+    postOrder(root->right);
     cout << root->val << " ";
 }
 
@@ -51,8 +52,8 @@ int main()
     d->left = f;
     d->right = g;
 
-    //called pre order function
-    inOrder(root);
+    //called post order function
+    postOrder(root);
 
     return 0;
 }
