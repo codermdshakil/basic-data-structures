@@ -1,1 +1,2 @@
-Nodes : 8
+Node : 8
+Leaf Nodes : 3

@@ -15,12 +15,13 @@ public:
     }
 };
 
-// input binary tree
 Node *input_binary_tree()
 {
     int val;
     cin >> val;
+
     Node *root;
+
     if (val == -1)
     {
         root = NULL;
@@ -42,7 +43,7 @@ Node *input_binary_tree()
         Node *p = q.front();
         q.pop();
 
-        // kaj kora
+        // ja kaj ase sob aikhane
         int l, r;
         cin >> l >> r;
 
@@ -57,7 +58,6 @@ Node *input_binary_tree()
         {
             val_left = new Node(l);
         }
-
         if (r == -1)
         {
             val_right = NULL;
@@ -67,42 +67,46 @@ Node *input_binary_tree()
             val_right = new Node(r);
         }
 
-        // connection
+        // connections
         p->left = val_left;
         p->right = val_right;
 
-        // children push kora
+        // childrens gulo print kora
         if (p->left)
+        {
             q.push(p->left);
+        }
         if (p->right)
+        {
             q.push(p->right);
+        }
     }
     return root;
 }
 
-// count nodes
-int count(Node *root)
+// nodes count
+int count_nodes(Node *root)
 {
-    // basecase
+    // base case
     if (root == NULL)
     {
         return 0;
     }
 
-    int l = count(root->left);
-    int r = count(root->right);
+    int l = count_nodes(root->left);
+    int r = count_nodes(root->right);
     return l + r + 1;
 }
-
-// count leaf
+// leaf node count
 int count_leaf(Node *root)
 {
+    // base case
     if (root == NULL)
     {
         return 0;
     }
 
-    if (root->left == NULL && root->right == NULL)
+    if (root->left == NULL & root->right == NULL)
     {
         return 1;
     }
@@ -114,11 +118,12 @@ int count_leaf(Node *root)
     }
 }
 
+
+
 int main()
 {
-
     Node *root = input_binary_tree();
-    cout << "Nodes : " << count(root) << endl;
+    cout << "Node : " << count_nodes(root) << endl;
     cout << "Leaf Nodes : " << count_leaf(root) << endl;
 
     return 0;
