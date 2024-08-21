@@ -16,6 +16,7 @@ public:
     }
 };
 
+
 // binary tree input
 Node *input_binary_tree()
 {
@@ -89,6 +90,7 @@ Node *input_binary_tree()
     }
     return root;
 }
+
 
 // level Order
 void level_order(Node *root)
