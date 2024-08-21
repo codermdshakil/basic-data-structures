@@ -13,6 +13,8 @@ public:
         this->right = NULL;
     }
 };
+
+// Level Order Traversal
 void level_order(Node *root)
 {
     // error handle
@@ -40,6 +42,7 @@ void level_order(Node *root)
             q.push(f->right);
     }
 }
+
 int main()
 {
     Node *root = new Node(10);
