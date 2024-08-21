@@ -92,11 +92,9 @@ int maxHeight(Node *root)
     {
         return 0;
     }
-
     int l = maxHeight(root->left);
     int r = maxHeight(root->right);
-
-    // check which one if big then big + 1
+    // check which one is big then big + 1
     return max(l, r) + 1;
 }
 
