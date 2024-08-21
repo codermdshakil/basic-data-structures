@@ -15,6 +15,7 @@ public:
     }
 };
 
+// In Order Traversal/print
 void inOrder(Node *root)
 {
     // base case
