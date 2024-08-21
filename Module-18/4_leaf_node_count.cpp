@@ -94,14 +94,14 @@ int count(Node *root)
     return l + r + 1;
 }
 
-// count leaf
+// count leaf counting function
 int count_leaf(Node *root)
 {
     if (root == NULL)
     {
         return 0;
     }
-
+    // leaf node don't have any children
     if (root->left == NULL && root->right == NULL)
     {
         return 1;
