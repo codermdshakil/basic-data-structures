@@ -63,17 +63,33 @@ void level_order(Node *root)
     while (!q.empty())
     {
         // ber kora
-        Node * f = q.front();
+        Node *f = q.front();
         q.pop();
 
         // kaj kora
         cout << f->val << " ";
 
         // children push to queue
-        if(f->left) q.push(f->left);
-        if(f->right) q.push(f->right);
+        if (f->left)
+            q.push(f->left);
+        if (f->right)
+            q.push(f->right);
     }
-    
+}
+
+// Count Node
+int count_nodes(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+
+    int l = count_nodes(root->left);
+    int r = count_nodes(root->right);
+
+    return l + r + 1;
+
 }
 
 int main()
@@ -102,7 +118,9 @@ int main()
     // InOrder(a);
 
     // level Order
-    level_order(a);
-    
+    // level_order(a);
+
+    cout << count_nodes(a) << endl;
+
     return 0;
 }
