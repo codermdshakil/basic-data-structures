@@ -41,6 +41,19 @@ void postOrder(Node *root)
     cout << root->val << " ";
 }
 
+// In Order
+void InOrder(Node *root)
+{
+    // basecase
+    if (root == NULL)
+    {
+        return;
+    }
+    InOrder(root->left);
+    cout << root->val << " ";
+    InOrder(root->right);
+}
+
 
 int main()
 {
@@ -62,7 +75,10 @@ int main()
     // preOrder(a);
 
     // Post order
-    postOrder(a);
-    
+    // postOrder(a);
+
+    // In order
+    // InOrder(a);
+
     return 0;
 }
