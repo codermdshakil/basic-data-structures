@@ -89,7 +89,26 @@ int count_nodes(Node *root)
     int r = count_nodes(root->right);
 
     return l + r + 1;
+}
 
+// Counting Leaf nodes
+int count_leaf(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+
+    if (root->left == NULL && root->right == NULL)
+    {
+        return 1;
+    }
+    else
+    {
+        int l = count_leaf(root->left);
+        int r = count_leaf(root->right);
+        return l + r;
+    }
 }
 
 int main()
@@ -120,7 +139,8 @@ int main()
     // level Order
     // level_order(a);
 
-    cout << count_nodes(a) << endl;
+    // cout << count_nodes(a) << endl;
+    cout << count_leaf(a) << endl;
 
     return 0;
 }
