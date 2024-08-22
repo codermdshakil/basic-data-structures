@@ -15,6 +15,7 @@ public:
     }
 };
 
+// Pre Order
 void preOrder(Node *root)
 {
     // basecase
@@ -26,6 +27,20 @@ void preOrder(Node *root)
     preOrder(root->left);
     preOrder(root->right);
 }
+
+// Post Order
+void postOrder(Node *root)
+{
+    // basecase
+    if (root == NULL)
+    {
+        return;
+    }
+    postOrder(root->left);
+    postOrder(root->right);
+    cout << root->val << " ";
+}
+
 
 int main()
 {
@@ -44,7 +59,10 @@ int main()
     c->right = e;
 
     // Pre Order x  
-    preOrder(a);
+    // preOrder(a);
 
+    // Post order
+    postOrder(a);
+    
     return 0;
 }
