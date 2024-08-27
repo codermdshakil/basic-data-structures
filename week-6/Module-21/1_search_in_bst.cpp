@@ -127,6 +127,7 @@ bool search(Node *root, int x)
         return false;
     }
 
+    // logic
     if (root->val == x)
         return true;
 
