@@ -11,7 +11,7 @@ void insert_min_heap(vector<int> &v, int x)
     while (cur_inx != 0)
     {
         int parent_inx = (cur_inx - 1) / 2;
-        if (v[parent_inx] < v[cur_inx])
+        if (v[parent_inx] > v[cur_inx])
         {
             swap(v[parent_inx], v[cur_inx]);
         }
@@ -42,14 +42,16 @@ void delete_min_heap(vector<int> &v)
         {
             // doitai ase left and right
 
-            if (v[left_idx] >= v[right_idx] && v[left_idx] > v[cur_idx]) // left is big
+            // left is big
+            if (v[left_idx] <= v[right_idx] && v[left_idx] < v[cur_idx])
             {
                 // now left is biger then currrent value so, swap
                 swap(v[left_idx], v[cur_idx]);
                 // change current index to left index
                 cur_idx = left_idx;
             }
-            else if (v[right_idx] >= v[left_idx] && v[right_idx] > v[cur_idx]) // right is big
+            // right is big
+            else if (v[right_idx] <= v[left_idx] && v[right_idx] < v[cur_idx])
             {
                 // now right is biger then currrent value so, swap
                 swap(v[right_idx], v[cur_idx]);
@@ -64,7 +66,7 @@ void delete_min_heap(vector<int> &v)
         else if (left_idx <= last_idx)
         {
             // left ase
-            if (v[left_idx] > v[cur_idx])
+            if (v[left_idx] < v[cur_idx])
             {
                 swap(v[left_idx], v[cur_idx]);
                 cur_idx = left_idx;
@@ -77,7 +79,7 @@ void delete_min_heap(vector<int> &v)
         else if (right_idx <= last_idx)
         {
             // right ase
-            if (v[right_idx] > v[cur_idx])
+            if (v[right_idx] < v[cur_idx])
             {
                 swap(v[right_idx], v[cur_idx]);
                 cur_idx = right_idx;
@@ -116,15 +118,17 @@ int main()
         insert_min_heap(v, x);
     }
 
-    // called delete heap
+    // min heap main
+    print_heap(v); // 3 15 5 30 20 25 6
+
+    // called delete min heap
     delete_min_heap(v);
+
     // print heap
-    print_heap(v); // 25 20 6 15 5 3  // [30] remove
-
+    print_heap(v); // 5 15 6 30 20 25 // [3] remove
     delete_min_heap(v);
-    print_heap(v); // 20 15 6 3 5  // [25] remove
-
-
+    print_heap(v); // 6 15 25 30 20 // [5] remove
+    
 
     return 0;
 }
