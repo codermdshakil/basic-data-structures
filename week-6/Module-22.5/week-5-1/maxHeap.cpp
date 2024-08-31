@@ -5,7 +5,7 @@ class MaxHeap
 {
 public:
     vector<int> nodes;
-    
+
     void up_heapify(int cur_idx)
     {
         while (cur_idx != 0)
@@ -42,7 +42,8 @@ int main()
     heap.push(3);
     heap.push(4);
     heap.push(5);
-    heap.print();
+    heap.print(); // 5 4 2 1 3
+    
 
 
     return 0;
