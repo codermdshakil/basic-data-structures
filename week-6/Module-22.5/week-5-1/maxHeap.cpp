@@ -108,8 +108,25 @@ int main()
     // cout << heap.extractMax() << " ";
     // cout << heap.extractMax() << " ";
 
-    
- 
+    // Heap Sort
+    vector<int> v = {5, 3, 1, 4, 2};
+    heap.buildHeapFromArray(v);
+
+    vector<int> result;
+
+    // take max value and push it to result
+    for (int i = 0; i < v.size(); i++)
+    {
+        result.push_back(heap.extractMax());
+    }
+    // reverse dessending to assending order
+    reverse(result.begin(), result.end());
+
+    // print result 
+    for (int i = 0; i < result.size(); i++)
+    {
+        cout << result[i] << " ";
+    }
 
     return 0;
 }
