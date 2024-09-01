@@ -64,7 +64,8 @@ public:
         }
     }
 
-    int extractMax(){
+    int extractMax()
+    {
         int max = nodes[0];
         pop(0);
         return max;
@@ -94,12 +95,21 @@ int main()
     // heap.pop(0);
     // heap.pop(1);
     // vector<int> v = {2, 3, 4, 8, 11, 10, 9, 6};
-    vector<int> v = {1, 2, 3, 4, 5};
-    heap.buildHeapFromArray(v);
 
+    // Make heap from array
+    //-----------------------
+
+    // heap.buildHeapFromArray(v);
     // heap.print(); // 5 4 2 1 3
-    cout << heap.extractMax() << " ";
-    cout << heap.extractMax() << " ";
+
+    // Get max value
+    // ----------------
+
+    // cout << heap.extractMax() << " ";
+    // cout << heap.extractMax() << " ";
+
+    
+ 
 
     return 0;
 }
