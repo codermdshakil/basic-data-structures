@@ -53,6 +53,17 @@ public:
         down_heapify(idx);
     }
 
+    void buildHeapFromArray(vector<int> arr)
+    {
+        nodes = arr;
+        int lastNonLeafIndex = (nodes.size() / 2) - 1;
+
+        for (int i = lastNonLeafIndex; i >= 0; i--)
+        {
+            down_heapify(i);
+        }
+    }
+
     void print()
     {
         for (int node : nodes)
@@ -74,8 +85,10 @@ int main()
     heap.push(5);
 
     // pass index to delete value
-    heap.pop(0);
-    heap.pop(1);
+    // heap.pop(0);
+    // heap.pop(1);
+    vector<int> v = {2, 3, 4, 8, 11, 10, 9, 6};
+    heap.buildHeapFromArray(v);
     heap.print(); // 5 4 2 1 3
 
     return 0;
