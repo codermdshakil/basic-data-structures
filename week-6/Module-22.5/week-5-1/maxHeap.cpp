@@ -64,6 +64,12 @@ public:
         }
     }
 
+    int extractMax(){
+        int max = nodes[0];
+        pop(0);
+        return max;
+    }
+
     void print()
     {
         for (int node : nodes)
@@ -87,9 +93,13 @@ int main()
     // pass index to delete value
     // heap.pop(0);
     // heap.pop(1);
-    vector<int> v = {2, 3, 4, 8, 11, 10, 9, 6};
+    // vector<int> v = {2, 3, 4, 8, 11, 10, 9, 6};
+    vector<int> v = {1, 2, 3, 4, 5};
     heap.buildHeapFromArray(v);
-    heap.print(); // 5 4 2 1 3
+
+    // heap.print(); // 5 4 2 1 3
+    cout << heap.extractMax() << " ";
+    cout << heap.extractMax() << " ";
 
     return 0;
 }
