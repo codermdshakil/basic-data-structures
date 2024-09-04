@@ -1,5 +1,3 @@
-Rahat 100
-Sakib Al Hassan 75
-Shakil 150
-Shamim 75
-Tamim Iqbal 19
+150
+100
+75
