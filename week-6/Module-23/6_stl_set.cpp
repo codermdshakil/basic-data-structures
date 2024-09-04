@@ -16,24 +16,24 @@ int main()
     }
 
     //  print all sets value in assending sorted order
-    // for (auto it = s.begin(); it != s.end(); it++)
-    // {
-    //     cout << *it << endl;
-    // }
-
-    //  print all sets value in dessending sorted order [but we can't do this dessending order in set ]
-    vector<int> v;
     for (auto it = s.begin(); it != s.end(); it++)
     {
-        // cout << *it << endl;
-        v.push_back(*it);
+        cout << *it << endl;
     }
 
-    // reverse vector
-    reverse(v.begin(), v.end());
-    for(int val:v){
-        cout << val << " ";
-    }
+    //  print all sets value in dessending sorted order [but we can't do this dessending order in set ]
+    // vector<int> v;
+    // for (auto it = s.begin(); it != s.end(); it++)
+    // {
+    //     // cout << *it << endl;
+    //     v.push_back(*it);
+    // }
+
+    // // reverse vector
+    // reverse(v.begin(), v.end());
+    // for(int val:v){
+    //     cout << val << " ";
+    // }
 
 
     // if a specific value found in set then print yes otherwise no
