@@ -5,12 +5,18 @@ int main()
 {
 
     map<string, int> mp;
-    mp.insert({"Sakib Al Hassan", 75});
-    mp.insert({"Tamim Iqbal", 19});
-    mp.insert({"Rahat", 100});
-    mp.insert({"akib", 0});
-    mp.insert({"Shakil", 150});
-    mp.insert({"Shamim", 75});
+    // mp.insert({"Sakib Al Hassan", 75});
+    // mp.insert({"Tamim Iqbal", 19});
+    // mp.insert({"Rahat", 100});
+    // mp.insert({"akib", 0});
+    // mp.insert({"Shakil", 150});
+    // mp.insert({"Shamim", 75});
+
+    // alternative to assign value of key
+    
+    mp["Sakib Al Hassan"] = 75; // log(N)
+    mp["akib"] = 10;
+    mp["Shakil"] = 50;
 
     // Print all map value
     // for(auto it = mp.begin(); it != mp.end(); it++){
@@ -31,6 +37,13 @@ int main()
     // {
     //     cout << "Nai" << endl;
     // }
+
+    //  print all value of map
+    for (auto it= mp.begin(); it != mp.end(); it++)
+    {
+        cout << it->first << " " << it->second << endl; // log(N)
+    }
+    
 
     return 0;
 }
