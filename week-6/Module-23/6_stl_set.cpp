@@ -16,6 +16,8 @@ int main()
     }
 
     //  print all sets value in assending sorted order
+    // 1. sorting 
+    // 2. duplicate remove // N(logN)
     for (auto it = s.begin(); it != s.end(); it++)
     {
         cout << *it << endl;
@@ -35,7 +37,7 @@ int main()
     //     cout << val << " ";
     // }
 
-
+    // 3. Search // O(logN)
     // if a specific value found in set then print yes otherwise no
     // if (s.count(10))
     // {
