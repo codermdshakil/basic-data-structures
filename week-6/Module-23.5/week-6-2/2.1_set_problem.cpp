@@ -14,14 +14,20 @@ int main()
     }
 
     // get second value of sets
-    
+
     int n1 = 1;
     // Initializing iterator
     auto it = val.begin();
     it++;
 
-    // Printing the element at index n
-    cout << *it;
+    if (it != val.end())
+    {
+        cout << *it << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
+    }
 
     return 0;
 }
