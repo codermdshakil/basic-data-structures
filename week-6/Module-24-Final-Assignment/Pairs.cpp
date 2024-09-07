@@ -17,13 +17,14 @@ public:
 class cmp
 {
 public:
-    bool operator()(Person a, Person b)
+    bool operator()(Person &a, Person &b)
     {
         if (a.name != b.name)
         {
             return a.name > b.name;
         }
-        else{
+        else
+        {
             return a.num < b.num;
         }
     }
@@ -31,6 +32,9 @@ public:
 
 int main()
 {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int n;
     cin >> n;
 
