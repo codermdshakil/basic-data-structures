@@ -1,10 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/**
- * Warning here second testcase always give me ratul 2 I can't fix it kindly when you give me feedback sent me this logic in feedback. Thank you!
-*/
-
 void findMostCountWord(string sentence)
 {
     map<string, int> countWord;
